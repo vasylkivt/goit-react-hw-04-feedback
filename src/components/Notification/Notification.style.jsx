@@ -10,28 +10,28 @@ export const Text = styled.p`
   color: ${({ theme }) => theme.colors.titleColor};
   font-weight: 700;
 
-  font-size: 36px;
+  font-size: ${({ theme }) => theme.spacing(9)};
   line-height: 1.11;
   letter-spacing: 0.72px;
   text-align: center;
   text-transform: capitalize;
 
   & > svg {
-    width: 175px;
-    height: 175px;
+    width: 115px;
+    height: 115px;
     fill: ${({ theme }) => theme.colors.backgroundColorBtn};
   }
   & svg:first-child {
     position: absolute;
     bottom: 25px;
-    left: -75px;
-    transform: rotate(30deg);
+    left: -55px;
+    transform: rotate(45deg);
   }
 
   & svg:last-child {
     position: absolute;
     bottom: 25px;
-    right: -75px;
-    transform: rotate(-30deg);
+    right: -55px;
+    transform: rotate(-45deg);
   }
 `;

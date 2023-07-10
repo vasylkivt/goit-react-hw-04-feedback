@@ -1,11 +1,7 @@
 import { useState } from 'react';
+import { Notification, FeedbackOptions, Statistics, Section } from 'components';
 
-import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
-import Statistics from 'components/Statistics/Statistics';
-import Notification from 'components/Notification/Notification';
-import { SectionBtn, SectionStatistics } from './App.style';
-
-const App = () => {
+export const App = () => {
   const options = ['good', 'neutral', 'bad'];
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
@@ -31,8 +27,6 @@ const App = () => {
     return bad + good + neutral;
   }
 
-  //
-
   function countPositiveFeedbackPercentage() {
     const total = countTotalFeedback();
     return Math.round((100 / total) * good || 0);
@@ -43,11 +37,12 @@ const App = () => {
 
   return (
     <>
-      <SectionBtn title="Please leave feedback">
-        <FeedbackOptions onLeaveFeedback={onLeaveFeedback} options={options} />{' '}
-      </SectionBtn>
-      <SectionStatistics title="Statistics">
-        {totalFeedback ? (
+      <Section title="Please leave feedback">
+        <FeedbackOptions onLeaveFeedback={onLeaveFeedback} options={options} />
+      </Section>
+
+      {totalFeedback ? (
+        <Section title="Statistics">
           <Statistics
             good={good}
             neutral={neutral}
@@ -55,12 +50,10 @@ const App = () => {
             total={totalFeedback}
             positivePercentage={totalPercentage}
           />
-        ) : (
-          <Notification message="There is no feedback" />
-        )}
-      </SectionStatistics>
+        </Section>
+      ) : (
+        <Notification message={' There is no feedback'} />
+      )}
     </>
   );
 };
-
-export default App;

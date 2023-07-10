@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Button, ButtonsWrap } from './FeedbackOptions.style';
 
-export default function FeedbackOptions({ options, onLeaveFeedback }) {
+export function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
     <ButtonsWrap>
       {options.map(option => (

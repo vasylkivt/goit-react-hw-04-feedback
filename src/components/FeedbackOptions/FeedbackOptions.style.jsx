@@ -21,7 +21,7 @@ export const ButtonsWrap = styled.div`
 `;
 
 export const Button = styled.button`
-  font-size: 18px;
+  font-size: ${({ theme }) => theme.fontSizes.medium};
   line-height: 1.11;
   letter-spacing: 0.72px;
   text-align: center;
@@ -49,7 +49,7 @@ export const Button = styled.button`
     text-shadow: 2px 0px 3px #838383, -2px 0px 3px #838383, 0px 2px 3px #838383,
       0px -2px 3px #838383;
 
-    font-size: 22px;
+    font-size: ${({ theme }) => theme.fontSizes.large};
     color: ${getColor};
     box-shadow: 0px 0px 15px 5px ${getColor};
     background: radial-gradient(

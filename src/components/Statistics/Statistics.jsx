@@ -8,13 +8,7 @@ import {
   Text,
 } from './Statistics.style';
 
-export default function Statistics({
-  good,
-  neutral,
-  bad,
-  total,
-  positivePercentage,
-}) {
+export function Statistics({ good, neutral, bad, total, positivePercentage }) {
   return (
     <StatisticsWrap>
       <FeedbackValueWrap>

@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import { PiArrowBendRightUpBold, PiArrowBendLeftUpBold } from 'react-icons/pi';
 import { Text } from './Notification.style';
 
-export default function Notification({ message, className }) {
+export function Notification({ message }) {
   return (
     <>
-      <Text className={className}>
+      <Text>
         <PiArrowBendLeftUpBold />
         {message}
         <PiArrowBendRightUpBold />

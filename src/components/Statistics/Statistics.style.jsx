@@ -25,7 +25,7 @@ export const StatItem = styled.div`
   gap: 10px;
 `;
 export const Text = styled.div`
-  font-size: 18px;
+  font-size: ${({ theme }) => theme.fontSizes.medium};
   line-height: 1.11;
   letter-spacing: 0.72px;
   text-align: center;
@@ -42,7 +42,7 @@ export const FeedbackValueWrap = styled.div`
 `;
 
 export const Info = styled.div`
-  font-size: 25px;
+  font-size: ${({ theme }) => theme.fontSizes.large};
   color: ${({ theme }) => theme.colors.textColor};
   font-weight: 500;
   background: ${({ theme }) => theme.colors.linearGradient};
@@ -64,7 +64,7 @@ export const PositiveFeedbackWrap = styled.div`
   margin: 0 auto;
   gap: 10px;
   & p:first-child {
-    font-size: 18px;
+    font-size: ${({ theme }) => theme.fontSizes.medium};
     line-height: 1.11;
     letter-spacing: 0.72px;
     text-align: center;
@@ -74,7 +74,7 @@ export const PositiveFeedbackWrap = styled.div`
   }
 
   & p:last-child {
-    font-size: 25px;
+    font-size: ${({ theme }) => theme.fontSizes.large};
     color: ${({ theme }) => theme.colors.black};
     font-weight: 700;
     background-color: ${getBgColor};

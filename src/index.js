@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import 'modern-normalize';
+
 import { ThemeProvider } from 'styled-components';
-import { theme } from 'constants/theme';
-import './index.css';
-import App from 'components/App/App';
+import { theme, GlobalStyle } from 'styles';
+import { App } from 'components';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ThemeProvider theme={theme}>
-    <React.StrictMode>
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <App />
-    </React.StrictMode>
-  </ThemeProvider>
+    </ThemeProvider>
+  </React.StrictMode>
 );
