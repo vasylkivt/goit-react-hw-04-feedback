@@ -9,28 +9,30 @@ export const App = () => {
 
   function onLeaveFeedback(event, option) {
     event.target.blur();
-    if (option === 'good') {
-      setGood(good + 1);
-      return;
-    }
-    if (option === 'neutral') {
-      setNeutral(neutral + 1);
-      return;
-    }
-    if (option === 'bad') {
-      setBad(bad + 1);
-      return;
-    }
+
+    if (option === 'good') setGood(g => g + 1);
+    else if (option === 'neutral') setNeutral(n => n + 1);
+    else if (option === 'bad') setBad(b => b + 1);
+
+    // switch (option) {
+    //   case 'good':
+    //     setGood(g => g + 1);
+    //     break;
+    //   case 'neutral':
+    //     setNeutral(n => n + 1);
+    //     break;
+    //   case 'bad':
+    //     setBad(b => b + 1);
+    //     break;
+    //   default:
+    //     return;
+    // }
   }
 
-  function countTotalFeedback() {
-    return bad + good + neutral;
-  }
+  const countTotalFeedback = () => bad + good + neutral;
 
-  function countPositiveFeedbackPercentage() {
-    const total = countTotalFeedback();
-    return Math.round((100 / total) * good || 0);
-  }
+  const countPositiveFeedbackPercentage = () =>
+    Math.round((100 / countTotalFeedback()) * good || 0);
 
   const totalFeedback = countTotalFeedback();
   const totalPercentage = countPositiveFeedbackPercentage() + '%';

@@ -6,10 +6,9 @@ export function FeedbackOptions({ options, onLeaveFeedback }) {
     <ButtonsWrap>
       {options.map(option => (
         <Button
-          option={option}
-          // onClick={event => onLeaveFeedback(event, option)}
-          onClick={event => onLeaveFeedback(event, option)}
           key={option}
+          option={option}
+          onClick={event => onLeaveFeedback(event, option)}
           type="button"
         >
           {option}
