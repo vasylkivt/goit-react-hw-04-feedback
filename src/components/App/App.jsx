@@ -2,31 +2,28 @@ import { useState } from 'react';
 import { Notification, FeedbackOptions, Statistics, Section } from 'components';
 
 export const App = () => {
-  const options = ['good', 'neutral', 'bad'];
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
+  const options = Object.keys({ good, neutral, bad });
+
   function onLeaveFeedback(event, option) {
     event.target.blur();
 
-    if (option === 'good') setGood(g => g + 1);
-    else if (option === 'neutral') setNeutral(n => n + 1);
-    else if (option === 'bad') setBad(b => b + 1);
-
-    // switch (option) {
-    //   case 'good':
-    //     setGood(g => g + 1);
-    //     break;
-    //   case 'neutral':
-    //     setNeutral(n => n + 1);
-    //     break;
-    //   case 'bad':
-    //     setBad(b => b + 1);
-    //     break;
-    //   default:
-    //     return;
-    // }
+    switch (option) {
+      case 'good':
+        setGood(g => g + 1);
+        break;
+      case 'neutral':
+        setNeutral(n => n + 1);
+        break;
+      case 'bad':
+        setBad(b => b + 1);
+        break;
+      default:
+        return;
+    }
   }
 
   const countTotalFeedback = () => bad + good + neutral;
